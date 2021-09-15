@@ -1,7 +1,7 @@
 <!-- 
 This website is made by team Pin It Down for the 2021 DBS Hackathon: Hack for a Better World. 
 
-This is meant to be a static website hacked together in a short period of time to present our team's solutions to the problem statement. It is not meant to be a final product. 
+This is meant to be a static website hacked together in a short period of time to present our team's solutions to the problem statement. It is not meant to be a final product. All contents in this website are fictional in nature. Organisations and entities mentioned here are not involved in this submission.
 
 This website is made with Materialize.css. 
 
@@ -15,28 +15,47 @@ Sora Shimazaki from Pexels
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>title</title>
-  <meta name="author" content="name">
-  <meta name="description" content="description here">
-  <meta name="keywords" content="keywords,here">
-  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <META NAME="robots" CONTENT="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/89f169af22.js" crossorigin="anonymous"></script>
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    .datetime{
+        font-weight:300;
+        font-size:0.8em;
+    }
     body{
         font-family: 'Lato', sans-serif;
         font-weight:400;
         background-color: #eeeeee;
         color:#212121;
         margin:0;
+        max-width:100vw;
     }
-
+    nav i{
+        margin-top:2.5%;
+        padding-right:-10%;
+    }
     body a{
+        color: #f57c00;
+    }
+    option{
+        color: #f57c00;
+    }
+    select{
         color: #f57c00;
     }
     .button-container{
@@ -55,10 +74,9 @@ Sora Shimazaki from Pexels
         margin-top:5%;
         margin-bottom:5%;
     }
-
     section{
-        padding-top:10%;
-        padding-bottom:10%;
+        padding-top:5em;
+        padding-bottom:5em;
     }
     #header-section{
         padding-top:25%;
@@ -68,6 +86,16 @@ Sora Shimazaki from Pexels
         font-family: 'Raleway', sans-serif;
         font-weight:900;
         letter-spacing: 0.05em;
+        position:relative;
+    }
+    h1::before{
+        position:absolute;
+        top:-15%;
+        left:0;
+        width:100px;
+        height:10px;
+        content:"";
+        background-color:#212121;
     }
     #news h2{
         font-size:1.1em;
@@ -76,7 +104,7 @@ Sora Shimazaki from Pexels
     }
     #header-section h2{
         font-weight:400;
-        text-align:center;
+        text-align:left;
         margin-bottom:5%;
         font-family: 'Raleway', sans-serif;
     }
@@ -90,11 +118,21 @@ Sora Shimazaki from Pexels
         font-weight:700
     }
     h1{
-        text-align:center;
+        text-align:left;
+        position:relative;
+        letter-spacing:0.02em;
     }
 
+    nav, .navbar-dropdown{
+        background-color: #eeeeee;
+    }
+    .navbar-dropdown{
+        font-size:1em;
+        font-family: 'Raleway', sans-serif;
+        font-weight:700;
+        letter-spacing: 0.05em;
+    }
     nav, nav ul, nav a, nav li{
-        background-color:transparent;
         color:#212121;
         font-family: 'Raleway', sans-serif;
         font-weight:700;
@@ -108,7 +146,20 @@ Sora Shimazaki from Pexels
     .dropdown-trigger{
         color:#212121;
     } 
-
+    .input-field input[type=text]:focus + label {
+     color: #f57c00;
+   }
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #f57c00;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   .social-footer{
+       display:inline;
+   }
+   .social-footer li{
+       display:inline;
+       margin-right:1em;
+   }
     footer{
         margin:0;
         bottom:0;
@@ -119,14 +170,44 @@ Sora Shimazaki from Pexels
     footer ul ul{
         margin-left:2em;
     }
+
+    .instagram-container{
+        display:flex;
+        width:100%;
+        justify-content:center;
+        gap: 1em 2em;
+        flex-flow: row wrap;
+    }
+
+    .instagrampost{
+        width:33%;
+        flex-basis:1;
+    }
+
+    .instagrampost img{
+        max-width: 100%;
+        height:auto;
+    }
+    @media only screen and (min-width: 768px){
+        .container{
+            margin-left:30%;
+            width:60%;
+            margin-right:10%;
+        }
+        .instagrampost{
+        width:20%;
+        flex-basis: 1;
+    }
+    }
 </style>
 </head>
 <body>
     <ul id = "navbar-dropdown" class="dropdown-content grey-text text-darken-4">
-        <li><a href="/counselling" class ="orange-text text-darken-3" title = "Counselling Page">Counselling</a></li>
-        <li><a href="/supportgroup" class ="orange-text text-darken-3" title = "Support Group Page">Support Group</a></li>
-        <li><a href="/legal" class ="orange-text text-darken-3" title = "Legal Help Page">Legal Help</a></li>
+        <li><a href="/counselling" class ="grey-text text-darken-4" title = "Counselling Page">Counselling</a></li>
+        <li><a href="/supportgroup" class ="grey-text text-darken-4" title = "Support Group Page">Support Group</a></li>
+        <li><a href="/legal" class ="grey-text text-darken-4" title = "Legal Help Page">Legal Help</a></li>
     </ul>
+    <div class="navbar-fixed">
     <nav class="grey-text text-darken-4">
         <ul class = "right grey-text text-darken-4">
             <li><a href="/about" title = "About Page" class="grey-text text-darken-4">About</a></li>
@@ -135,13 +216,15 @@ Sora Shimazaki from Pexels
             <li><a href="#contact" title = "Contact us" class="grey-text text-darken-4">Contact</a></li>
         </ul>    
     </nav>
+    </div>
     <div class ="container">
     <main>
         <section id = "header-section">
             <div class = "row">
                 <h1>You are not alone.</h1>
-                <h2>We provide support for and raise awareness of partners and family members of sexual offenders in Singapore. </h2>
-                <p>Partners and family members of sexual offenders are oft-overlooked innocent secondary victims harmed by the sexual offence. We seek to reduce the stigma of having loved a sexual offender, and to support those who find themselves in this situation.</p>
+                <h2>We provide support for and raise awareness of partners and family members of Tech Facilitated Sexual Violence offenders in Singapore. </h2>
+                <p>Partners and family members of sexual offenders are oft-overlooked innocent secondary victims harmed by the sex offence. We seek to reduce the stigma of having loved a sexual offender, and to support those who find themselves in this situation.</p>
+                <p>Please note that this is a mockup website with fictional details for the purposes of our DBS Hackathon submission. No entities mentioned in this page are involved in this submission.</p>
                 <div class ="button-container">
                     <button class ="nav-button waves-effect waves-light orange darken-3 center-align btn">Read more</button>
                 </div>
@@ -159,7 +242,7 @@ Sora Shimazaki from Pexels
                 <div class="item-container col s12 m4">
                     <img class="responsive-img" src ="assets/supportgroup.jpg" alt ="Picture of two hands holding each other">
                     <h2>Support group</h2>
-                    <p>We provide virtual and in-person confidential support groups. Entry to our support groups is strictly invited to vetted invitees only. Apply online now.</p>
+                    <p>We provide virtual and in-person confidential support groups. Entry to our support groups is strictly for vetted invitees only. Apply online now.</p>
                     <div class ="button-container"><button class ="nav-button waves-effect waves-light orange darken-3 btn">Read more</button></div>
                 </div>
                 <div class="item-container col s12 m4">
@@ -173,20 +256,35 @@ Sora Shimazaki from Pexels
         <section id = "news">
             <h1>News</h1>
             <article class = "blog-post">
-                <h2><a href="/">Channel News Asia: "I loved him. I thought we kept no secrets from each other. And then the police arrested him for rape."</a></h2>
+                <h2><a href="#">Channel News Asia: "I loved him. I thought we kept no secrets from each other. And then the police arrested him for rape."</a></h2>
                 <div class ="datetime">9 November 2021 at 6:30 PM</div>
                 <p>In an article published today, CNA examined the structural invisibility and the difficult circumstances faced by partners and family members of sexual offenders. CNA spoke to Wendy (not her real name), who was happily married with two children to "James", until one day the police knocked on her door. <a href = "/">Read more...</a> </p>
             </article>
             <article class = "blog-post">
-                <h2><a href="/">We are adding new support group dates!</a></h2>
+                <h2><a href="#">We are adding new support group dates!</a></h2>
                 <div class ="datetime">8 November 2021 at 9:19 PM</div>
-                <p>We are adding two new support group dates for Thursdays at 730PM and Sundays at 3PM. These sessions will be held virtually until the number of COVID-19 cases in Singapore stabilise. <a href = "/">Read more...</a> </p>
+                <p>We are adding two new support group dates for Thursdays at 730PM and Sundays at 3PM. These sessions will be held virtually until the number of COVID-19 cases in Singapore stabilises. <a href = "/">Read more...</a> </p>
+            </article>
+            <article class = "blog-post">
+                <h2><a href="#">Singapore Police Force will refer family members of sexual offenders for counselling</a></h2>
+                <div class ="datetime">5 November 2021 at 4:20 PM</div>
+                <p>The Ministry of Home Affairs ("MHA") announced today that investigators will refer family members of sexual offenders for counselling at certain centers. <a href = "/">Read more...</a> </p>
             </article>
             <div class ="button-container"><button class ="nav-button waves-effect waves-light orange darken-3 btn">Read more</button></div>
         </section>
         <section id ="instagram">
-            <h1>Follow us @campaignname for updates</h1>
-            <p>We are also on Facebook and Twitter!</p>
+            <h1>Follow us <a href ="#" title ="our Instagram page">@lwses</a></h1>
+            <div class="instagram-container">
+                <div class="instagrampost"><a href ="#" title ="instagram page for this entry"><img src ="instagram/1.png" title ="instagram-content" alt ="Black text on orange background that says 'It's never too late to reach out'"></a></div>
+                <div class="instagrampost"><a href ="#" title ="instagram page for this entry"><img src ="instagram/2.png" title ="instagram-content" alt ="Black text on orange background that says '69% of people with a family member who was arrested for child porn have PTSD'"></a></div>
+                <div class="instagrampost"><a href ="#" title ="instagram page for this entry"><img src ="instagram/3.png" title ="instagram-content" alt ="Orange text on black background that says 'Then I started to think I had done something wrong, was it something I had done the caused this?'"></a></div>
+                <div class="instagrampost"><a href ="#" title ="instagram page for this entry"><img src ="instagram/4.png" title ="instagram-content" alt ="Black text on orange background that says 'My husband is part of SG Nasi Lemak Telegram Chatgroup. What do I do?'"></a></div>
+                <div class="instagrampost"><a href ="#" title ="instagram page for this entry"><img src ="instagram/5.png" title ="instagram-content" alt ="Orange text on black background that says 'Nobody understood my problem. Family and friends judged me and our marriage.'"></a></div>
+                <div class="instagrampost"><a href ="#" title ="instagram page for this entry"><img src ="instagram/6.png" title ="instagram-content" alt ="Black text on orange background that says 'Self care tip: Learn to spend time with yourself'"></a></div>
+                <div class="instagrampost"><a href ="#" title ="instagram page for this entry"><img src ="instagram/7.png" title ="instagram-content" alt ="Orange text on black background that says 'He was the sole bread winner and I didn't know what to do when he was charged. How will I provide for my children?'"></a></div>
+                <div class="instagrampost"><a href ="#" title ="instagram page for this entry"><img src ="instagram/8.png" title ="instagram-content" alt ="Black text on orange background that says 'Join us to be a part of a ground-up support group!'"></a></div>
+            </div>
+            <p class ="center">We are also on <a href ="#" title ="Our Facebook Page">Facebook</a> and <a href ="#" title ="Our Twitter Page">Twitter</a>!</p>
         </section>
     </main>
     <section id ="contact">
@@ -209,15 +307,15 @@ Sora Shimazaki from Pexels
                         <input id="phone_number" type="tel" class="validate">
                         <label for="phone_number">Phone</label>
                     </div>
-                    <div class="input-field col s6">
-                        <select>
+                    <div class="input-field col s6 orange-text text-darken-3">
+                        <select class ="orange-text text-darken-3">
                           <option value="" disabled selected>Choose one</option>
-                          <option value="1">Group support</option>
-                          <option value="2">Counselling</option>
-                          <option value="3">Other resources</option>
-                          <option value="4">Events</option>
-                          <option value="5">Collaboration</option>
-                          <option value="6">Others</option>
+                          <option value="1" class ="orange-text text-darken-3">Group support</option>
+                          <option value="2" class ="orange-text text-darken-3">Counselling</option>
+                          <option value="3" class ="orange-text text-darken-3">Other resources</option>
+                          <option value="4" class ="orange-text text-darken-3">Events</option>
+                          <option value="5" class ="orange-text text-darken-3">Collaboration</option>
+                          <option value="6" class ="orange-text text-darken-3">Others</option>
                         </select>
                         <label>Reason for contacting us</label>
                       </div>
@@ -239,7 +337,13 @@ Sora Shimazaki from Pexels
         <div class ="container">
             <div class ="row">
                 <div class="col s12 m6">
-                    <p>This is a static website made by team Pin It Down! for their 2021 DBS Hackathon: Hack for a Better World submission.</p>
+                    <ul class="social-footer">
+                        <li><a href ="#" title ="Our Twitter Page" class="grey-text text-lighten-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href ="#" title ="Our Facebook Page" class="grey-text text-lighten-3"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href ="#" title ="Our Instagram Page" class="grey-text text-lighten-3"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                    <p>This is a mockup website made by team Pin It Down! for their 2021 DBS Hackathon: Hack for a Better World submission.</p>
+                    <p>All contents in this website are fictional in nature. Entities and organisations mentioned in this website are not involved in this submission.</p>
                 </div>
                 <div class="col s12 m6">
                     <ul>
