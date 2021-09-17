@@ -221,9 +221,22 @@ Sora Shimazaki from Pexels
         <li><a href="/supportgroup" class ="grey-text text-darken-4" title = "Support Group Page">Support Group</a></li>
         <li><a href="/legal" class ="grey-text text-darken-4" title = "Legal Help Page">Legal Help</a></li>
     </ul>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="/about" title = "About Page" class="grey-text text-darken-4">About</a></li>
+        <div class="divider"></div>
+        <li class="grey-text text-darken-3"><a href="">Resources:</a></li>
+        <li><a href="/counselling" class ="grey-text text-darken-4" title = "Counselling Page">Counselling</a></li>
+        <li><a href="/supportgroup" class ="grey-text text-darken-4" title = "Support Group Page">Support Group</a></li>
+        <li><a href="/legal" class ="grey-text text-darken-4" title = "Legal Help Page">Legal Help</a></li>
+        <div class="divider"></div>
+        <li><a href="/news" title = "News and Events" class="grey-text text-darken-4">News</a></li>
+        <div class="divider"></div>
+        <li><a href="#contact" title = "Contact us" class="grey-text text-darken-4">Contact</a></li>
+      </ul>
     <div class="navbar-fixed">
     <nav class="grey-text text-darken-4">
-        <ul class = "right grey-text text-darken-4">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class = "right grey-text text-darken-4 hide-on-med-and-down">
             <li><a href="/about" title = "About Page" class="grey-text text-darken-4">About</a></li>
             <li class="grey-text text-darken-4"><a class="dropdown-trigger" id = "menudrop" href="#!" data-target="navbar-dropdown" class="gre-text text-darken-4">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="/news" title = "News and Events" class="grey-text text-darken-4">News</a></li>
@@ -237,8 +250,8 @@ Sora Shimazaki from Pexels
             <div class = "row">
                 <h1>You are not alone.</h1>
                 <h2>We provide support for and raise awareness of partners and family members of Tech Facilitated Sexual Violence offenders in Singapore. </h2>
-                <p>Partners and family members of sexual offenders are oft-overlooked innocent secondary victims harmed by the sex offence. We seek to reduce the stigma of having loved a sexual offender, and to support those who find themselves in this situation.</p>
-                <p>Please note that this is a mockup website with fictional details for the purposes of our DBS Hackathon submission. No entities mentioned in this page are involved in this submission.</p>
+                <p class ="flow-text">Partners and family members of sexual offenders are oft-overlooked innocent secondary victims harmed by the sex offence. We seek to reduce the stigma of having loved a sexual offender, and to support those who find themselves in this situation.</p>
+                <p class ="flow-text">Please note that this is a mockup website with fictional details for the purposes of our DBS Hackathon submission. No entities mentioned in this page are involved in this submission.</p>
                 <div class ="button-container">
                     <button class ="nav-button waves-effect waves-light orange darken-3 center-align btn">Read more</button>
                 </div>
@@ -386,7 +399,10 @@ Sora Shimazaki from Pexels
             var elems = document.querySelectorAll('.dropdown-trigger');
             var instances = M.Dropdown.init(elems, options);
         });
-        var menudrop = M.Dropdown.getInstance('#menudrop');
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
     </script>
 </body>
 </html>
